@@ -9,6 +9,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<scm>
+		<developerConnection>scm:git:https://github.com/striped/springizm.git</developerConnection>
+	</scm>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -40,6 +44,13 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.9.5</version>
+					<configuration>
+						<includes>microservice/*</includes>
+					</configuration>
+				</plugin>
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.0.0</version>
