@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: file:///Users/striped/IdeaProjects/sandbox/springizm
+          searchPaths: microservice/config/repo
+          forcePull: true
+
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URI:http://localhost:8761/eureka}
+    instance:
+      preferIpAddress: true
+      leaseRenewalIntervalInSeconds: 10
+      leaseExpirationDurationInSeconds: 30
+
+logging:
+  level:
+    org.springframework.cloud.config: INFO
+    com.netflix.eureka: INFO
+    com.netflix.discovery: INFO
